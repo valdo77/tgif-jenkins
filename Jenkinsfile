@@ -17,8 +17,17 @@ pipeline {
         }
 
          stage('FRONTEND TEST') {
+             agent { 
+                dockerfile {
+                    filename 'Dockerfile.test'
+                    dir 'FRONTEND'
+                    args '-v /usr/src/app'
+                    reuseNode false
+                }
+            }
+
             steps {
-                echo "Run front end test here"
+                sh 'cd /app; npm run test'
             }
         }
 

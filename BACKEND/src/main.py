@@ -80,7 +80,7 @@ animals = [
 ]
 
 
-@app.get("/animalssd")
+@app.get("/animals")
 def get_all():
     return  animals
 
