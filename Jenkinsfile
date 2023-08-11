@@ -22,10 +22,6 @@ pipeline {
             }
         }
 
-        stage('Merge to UAT') {
-            steps {
-                build job: 'merge_branch'
-            }
-        }
+        
     }
 }
