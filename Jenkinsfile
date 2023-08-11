@@ -31,6 +31,12 @@ pipeline {
             }
         }
 
+        stage('MERGE TO UAT') {
+            steps{
+                build job: 'MERGE TO UAT'
+            }
+        }
+
         
     }
 }
