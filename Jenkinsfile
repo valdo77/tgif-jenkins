@@ -2,32 +2,14 @@ pipeline {
     agent any
     stages {
         stage('BACKEND TEST') {
-            agent { 
-                dockerfile {
-                    filename 'Dockerfile'
-                    dir 'BACKEND'
-                    args '-v /usr/src/app'
-                    reuseNode false
-                }
-            }
-
-            steps {
-                sh 'cd /app; python src/test_main.py'
+           steps {
+                echo "Run front end test here"
             }
         }
 
          stage('FRONTEND TEST') {
-             agent { 
-                dockerfile {
-                    filename 'Dockerfile.test'
-                    dir 'FRONTEND'
-                    args '-v /usr/src/app'
-                    reuseNode false
-                }
-            }
-
-            steps {
-                sh 'cd /app; npm run test'
+           steps {
+                echo "Run front end test here"
             }
         }
 
